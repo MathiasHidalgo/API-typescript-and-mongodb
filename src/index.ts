@@ -7,6 +7,8 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 import dotenv from 'dotenv'; dotenv.config();
+import mongoose from 'mongoose';
+import { MongoAPIError } from 'mongodb';
 
 //init the application
 
@@ -30,3 +32,7 @@ server.listen(port, () =>{
 })
 
 const MONGO_URL = 'mongodb+srv://Mathbucks:Mathbucks_@cluster0.0hghscn.mongodb.net/?retryWrites=true&w=majority';
+
+mongoose.Promise = Promise;
+mongoose.connect(MONGO_URL)
+mongoose.connection.on('error', (error: Error) => console.log(error));
