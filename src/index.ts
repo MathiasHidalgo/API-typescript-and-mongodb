@@ -29,3 +29,4 @@ server.listen(port, () =>{
 	console.log(`Server Running on port http://localhost:${port}/`);
 })
 
+const MONGO_URL = 'mongodb+srv://Mathbucks:Mathbucks_@cluster0.0hghscn.mongodb.net/?retryWrites=true&w=majority';
